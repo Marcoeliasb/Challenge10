@@ -1,0 +1,17 @@
+{
+    "name": "svg-logo-maker",
+    "version": "1.0.0",
+    "description": "A Node.js CLI to generate logos in SVG format",
+    "main": "index.js",
+    "scripts": {
+      "test": "jest"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "inquirer": "^8.2.4"
+    },
+    "devDependencies": {
+      "jest": "^29.1.2"
+    }
+  }
