@@ -1,11 +1,11 @@
-const fs = require("fs");
-const {getUserInput} = require ("./lib/prompts");
-const {Circle, Triangle, Square} = require ("./lib/shapes");
+const fs = require("fs");// 
+const {getUserInput} = require ("./lib/prompts");// Llamamos la funcion getuserinput del archivo de prompts
+const {Circle, Triangle, Square} = require ("./lib/shapes");// llamamos las clases que se crearon en el archivo shapes
 
 const generateSVG = ({ text, textColor, shape, shapeColor}) => {
     let selectedShape;
 
-    switch (shape){
+    switch (shape){// Selecciona la forma basada en lo que solicitó el usuario
         case "Circle":
             selectedShape = new Circle(shapeColor);
             break;
@@ -22,15 +22,15 @@ const generateSVG = ({ text, textColor, shape, shapeColor}) => {
       ${selectedShape.render()}
       <text x="150" y="125" font-size="60" text-anchor="middle" fill="${textColor}">${text}</text>
     </svg>
-  `;
+  `;// se crea el contenido SVG conforme lo que solicitó el usuario
 
-  fs.writeFileSync("logo.svg", svgContent.trim());
+  fs.writeFileSync("logo.svg", svgContent.trim());// Escribe el contenido SVG en un archivo
   console.log("Generated logo.svg");
 };
 
 const runApp = async () => {
-    const userInput = await getUserInput ();
-    generateSVG(userInput);
+    const userInput = await getUserInput ();// Obtenemos las entradas que ingresó el usuario
+    generateSVG(userInput);// Genera el archivo SVG con lo que ingresó el usuario
 };
 
-runApp();
+runApp();// Ejecuta la aplicación
